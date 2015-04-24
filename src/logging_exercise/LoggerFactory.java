@@ -10,6 +10,8 @@ public class LoggerFactory {
                 return new ConsoleLogWriter(cLevel);
             case "file":
                 return new FileLogWritter(path, cLevel);
+            case "Async":
+                return new AsyncLogger(path, cLevel);
             default:
                 return new ConsoleLogWriter(cLevel);
             }
