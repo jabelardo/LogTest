@@ -2,6 +2,7 @@ package logging_exercise;
 
 import junit.framework.TestCase;
 
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.io.File;
 import java.util.List;
@@ -14,7 +15,7 @@ public class FileLogWritterTest extends TestCase {
     public void testLogAppropiateLevel() throws Exception {
 
         String path = "test.txt";
-        ILogWriter logger =  LoggerFactory.GetLogger("file", LogLevel.DEBUG, path);
+        LogWriter logger =  LoggerFactory.GetLogger("file", LogLevel.DEBUG, path);
 
         logger.log("this is a debug message", LogLevel.DEBUG);
         logger.log("error message", LogLevel.ERROR);

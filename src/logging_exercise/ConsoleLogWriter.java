@@ -1,21 +1,16 @@
 package logging_exercise;
 
-import java.nio.channels.AsynchronousFileChannel;
-
 /**
  * Created by Nestor on 4/21/15.
  */
-public class ConsoleLogWriter implements ILogWriter{
-
-    LogLevel currentLevel;
+public class ConsoleLogWriter extends LogWriter {
 
     public ConsoleLogWriter(LogLevel cLevel) {
-        this.currentLevel = cLevel;
+        super(cLevel);
     }
 
     @Override
-    public void log(String message, LogLevel cLevel) {
-        if( cLevel.compareTo(currentLevel) <= 0)
-            System.out.println(message);
+    protected void logMessage(String message) {
+        System.out.println(message);
     }
 }

@@ -1,7 +1,5 @@
 package logging_exercise;
 
-import java.util.Comparator;
-
 /**
  * Created by Nestor on 4/21/15.
  */

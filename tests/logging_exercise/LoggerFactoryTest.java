@@ -8,13 +8,13 @@ import junit.framework.TestCase;
 public class LoggerFactoryTest extends TestCase {
 
     public void testGetLogger() throws Exception {
-        ILogWriter logger = LoggerFactory.GetLogger("console",LogLevel.INFO,null);
+        LogWriter logger = LoggerFactory.GetLogger("console",LogLevel.INFO,null);
 
         assertTrue("logger is ConsoleLogWriter", logger instanceof ConsoleLogWriter );
 
         logger = LoggerFactory.GetLogger("file", LogLevel.DEBUG,"test2.txt");
 
-        assertTrue("logger is FileLogWriter", logger instanceof FileLogWritter);
+        assertTrue("logger is FileLogWriter", logger instanceof FileLogWriter);
 
 
     }

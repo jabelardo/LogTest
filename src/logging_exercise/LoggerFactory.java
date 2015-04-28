@@ -4,18 +4,17 @@ package logging_exercise;
  * Created by Nestor on 4/22/15.
  */
 public class LoggerFactory {
-    public static ILogWriter GetLogger(String loggertype, LogLevel cLevel, String path){
-        switch(loggertype) {
-            case "console":
-                return new ConsoleLogWriter(cLevel);
+    public static LogWriter GetLogger(String loggertype, LogLevel cLevel, String path) {
+        switch (loggertype.toLowerCase()) {
             case "file":
-                return new FileLogWritter(path, cLevel);
-            case "Async":
+                return new FileLogWriter(path, cLevel);
+            case "async":
                 return new AsyncLogger(path, cLevel);
+            case "console":
             default:
                 return new ConsoleLogWriter(cLevel);
-            }
         }
-
     }
+
+}
 
